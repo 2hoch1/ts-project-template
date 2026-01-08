@@ -1,0 +1,44 @@
+{
+  "name": "ts-project-template",
+  "version": "0.1.0",
+  "description": "A flexible TypeScript project template for any use case.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build:dev": "tsc --sourceMap",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint src tests --ext .ts,.tsx,.mts,.mjs,.js,.jsx",
+    "lint:fix": "eslint src tests --ext .ts,.tsx,.mts,.mjs,.js,.jsx --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx,mts,mjs,js,jsx,json,md}\" \"tests/**/*.{ts,tsx,mts,mjs,js,jsx,json,md}\" \".github/**/*.{yml,yaml,json,md}\" \"*.{json,md,yml,yaml}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,mts,mjs,js,jsx,json,md}\" \"tests/**/*.{ts,tsx,mts,mjs,js,jsx,json,md}\" \".github/**/*.{yml,yaml,json,md}\" \"*.{json,md,yml,yaml}\"",
+    "prepare": "husky install"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript-eslint": "^8.52.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "husky": "^9.0.0",
+    "lint-staged": "^15.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.0.0"
+  }
+}
